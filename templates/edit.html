@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Edit Movie</h1>
+<div class="container w-50 text-center my-5 bg-info p-3 ">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Changes</button>
+</form>
+</div>
+{% endblock %}

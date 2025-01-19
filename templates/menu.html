@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title%} Home{% endblock %}
+
+{% block content%} 
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">List Movies</h5>
+                        <p class="card-text">View all your movies in a clean, organized table format.</p>
+                        <a href="{% url 'movie_list' %}" class="btn btn-primary">View Movies</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Add Movies</h5>
+                        <p class="card-text">Easily add new movies to your collection with a simple form.</p>
+                        <a href="{% url 'create' %}" class="btn btn-primary">Add Movie</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Movies</h5>
+                        <p class="card-text">Edit or delete existing movies to keep your list up-to-date.</p>
+                        <a href="{% url 'movie_list' %}" class="btn btn-primary">Manage Movies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

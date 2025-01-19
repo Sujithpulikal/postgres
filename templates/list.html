@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for movie1 in movies %}
+    <div class="card text-center mx-3 my-3" style="width: 18rem; display:inline-block;">
+        {% if movie1.img %}
+            <img src="{{ movie1.img.url }}" class="card-img-top" alt="Movie Poster" style="width: 100%; height: auto;">
+        {% else %}
+            <img src="path/to/default-image.jpg" class="card-img-top" alt="No image available" style="width: 100%; height: auto;">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ movie1.title|upper }}</h5>
+            <p class="card-text">Year: {{ movie1.year }}</p>
+            <p class="card-text">{{ movie1.summary|default:"No data available" }}</p>
+            
+        </div>
+        <div class="card-footer text-center">
+            <a href="{% url 'edit' movie1.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete' movie1.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
